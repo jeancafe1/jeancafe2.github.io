@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pedido de Desculpas</title>
+    <style>
+        #nao {
+            position: absolute;
+            transition: 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <p>Me perdoa, amor? Eu te amo, meu solzinho radiante.</p>
+    <button id="sim" onclick="resposta('sim')">Sim, eu perdoo, neném. Você que está certo. <3</button>
+    <button id="nao" onclick="resposta('nao')">Não</button>
+
+    <script>
+        var naoClicks = 0;
+
+        function resposta(opcao) {
+            if (opcao === 'nao') {
+                naoClicks += 1;
+
+                var naoButton = document.getElementById('nao');
+                naoButton.style.top = Math.random() * window.innerHeight + 'px';
+                naoButton.style.left = Math.random() * window.innerWidth + 'px';
+
+                if (naoClicks >= 5) {
+                    naoButton.innerText = 'Sim, eu perdoo, neném. Você que está certo. <3';
+                    naoButton.onclick = function () {
+                        alert('Sua resposta foi: Sim, eu perdoo, neném. Você que está certo. <3');
+                    };
+                }
+            } else {
+                alert('Sua resposta foi: Sim, eu perdoo, neném. Você que está certo. <3');
+            }
+        }
+    </script>
+
+</body>
+</html>
